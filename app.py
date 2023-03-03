@@ -13,9 +13,10 @@ def get_db_connection():
     return conn
 
 
-def get_post_by_id(post_id):
+def get_post(post_id):
     conn = get_db_connection()
-    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchall()
+    post = conn.execute('SELECT * FROM posts WHERE id = ?',
+                        (post_id,)).fetchone()
     conn.close()
     if post is None:
         abort(404)
@@ -30,9 +31,9 @@ def index():
     return render_template('index.html', posts=posts)
 
 
-@app.route('/<int:post_id>')
-def view_post(post_id):
-    post = get_post_by_id(post_id=post_id)
+@app.route('/<int:id>')
+def post(id):
+    post = get_post(id)
     return render_template('post.html', post=post)
 
 
@@ -58,8 +59,8 @@ def create():
 
 
 @app.route('/<int:id>/edit', methods=('GET', 'POST'))
-def edit_post(id):
-    post = get_post_by_id(id)
+def edit(id):
+    post = get_post(id)
 
     if request.method == 'POST':
         title = request.form['title']
@@ -69,10 +70,9 @@ def edit_post(id):
             flash('Title is required!')
         else:
             conn = get_db_connection()
-            conn.execute(
-                'UPDATE posts SET title = ?, content = ? WHERE id = ?',
-                (title, content, id),
-            )
+            conn.execute('UPDATE posts SET title = ?, content = ?'
+                         ' WHERE id = ?',
+                         (title, content, id))
             conn.commit()
             conn.close()
             return redirect(url_for('index'))
@@ -82,10 +82,10 @@ def edit_post(id):
 
 @app.route('/<int:id>/delete', methods=('POST',))
 def delete(id):
-    post = get_post_by_id(id)
+    post = get_post(id)
     conn = get_db_connection()
     conn.execute('DELETE FROM posts WHERE id = ?', (id,))
     conn.commit()
     conn.close()
-    flash(f'{post["title"]} was successfully deleted!')
+    flash('"{}" was successfully deleted!'.format(post['title']))
     return redirect(url_for('index'))
