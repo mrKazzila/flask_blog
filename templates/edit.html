@@ -9,6 +9,7 @@
         <input type="text" name="title" placeholder="Post title"
                class="form-control"
                value="{{ request.form['title'] or post['title'] }}">
+        </input>
     </div>
 
     <div class="form-group">
@@ -27,4 +28,5 @@
             class="btn btn-danger btn-sm"
             onclick="return confirm('Are you sure you want to delete this post?')">
 </form>
+
 {% endblock %}
