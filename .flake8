@@ -4,9 +4,7 @@ max-complexity = 10
 inline-quotes = '
 
 exclude =
-    */migration,
     .venv,
-    manage.py,
 
 ignore =
     E722,
@@ -18,5 +16,6 @@ ignore =
     D105,
     D106,
     D400,
+    D401,
     I100,
     I201,
