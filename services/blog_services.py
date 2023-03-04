@@ -24,7 +24,7 @@ def get_all_posts() -> list:
 def delete_post(post_title: str, post_id: int) -> NoReturn:
     """Delete post by post_id from database"""
     _delete_post_from_db(post_id=post_id)
-    flash('"{}" was successfully deleted!'.format(post_title))
+    flash(f'"{post_title}" was successfully deleted!')
 
 
 def create_new_post(request: Request):
