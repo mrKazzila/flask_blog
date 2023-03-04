@@ -78,9 +78,9 @@ To clone and run this project, you'll need:
    export FLASK_APP=app
    ```
 
-7. Add the FLASK_ENV environment variable for development mode:
+7. Add the FLASK_DEBUG environment variable for development mode:
     ```bash
-   export FLASK_ENV=development
+   export FLASK_DEBUG=development
    ```
 
 8. Run the Flask application:
