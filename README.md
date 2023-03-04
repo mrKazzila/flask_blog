@@ -12,7 +12,8 @@
 
 <h4 align="center">
     <br>
-    <a href="https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3" target="_blank">
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3"
+      target="_blank">
       How To Make a Web Application Using Flask in Python 3
     </a>
 </h4>
@@ -34,7 +35,7 @@
 
 ## Features
 * Simple blog 
-  - add and viewing posts in blog
+  - add, update and viewing posts in blog
 
 
 ## Tech stack
@@ -70,7 +71,7 @@ To clone and run this project, you'll need:
 
 5. Install packages
    ```bash
-   poetry install
+   poetry install --no-dev
    ```
 
 6. Add the FLASK_APP environment variable:
@@ -83,12 +84,17 @@ To clone and run this project, you'll need:
    export FLASK_DEBUG=development
    ```
 
-8. Run the Flask application:
+8. Init database:
+    ```bash
+   python init_db.py
+   ```
+
+9. Run the Flask application:
     ```bash
    flask run
    ```
 
-9. Open url [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+10. Open url [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 
 <br>
