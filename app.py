@@ -14,10 +14,10 @@ def index():
     return render_template('index.html', posts=posts)
 
 
-@app.route('/<int:id>')
-def post(id):
+@app.route('/<int:post_id>')
+def post(post_id):
     """Post page"""
-    post = get_post(id)
+    post = get_post(post_id=post_id)
     return render_template('post.html', post=post)
 
 
@@ -28,18 +28,18 @@ def create():
     return render_template('create.html')
 
 
-@app.route('/<int:id>/edit', methods=('GET', 'POST'))
-def edit(id):
+@app.route('/<int:post_id>/edit', methods=('GET', 'POST'))
+def edit(post_id):
     """Edit post"""
-    post = get_post(id)
-    edit_post(request=request, post_id=id)
+    post = get_post(post_id=post_id)
+    edit_post(request=request, post_id=post_id)
     return render_template('edit.html', post=post)
 
 
-@app.route('/<int:id>/delete', methods=('POST',))
-def delete(id):
+@app.route('/<int:post_id>/delete', methods=('POST',))
+def delete(post_id):
     """Delete post"""
-    post = get_post(id)
+    post = get_post(post_id=post_id)
     post_title = post['title']
-    delete_post(post_title=post_title, post_id=id)
+    delete_post(post_title=post_title, post_id=post_id)
     return redirect(url_for('index'))
