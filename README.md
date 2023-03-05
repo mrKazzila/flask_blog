@@ -50,6 +50,10 @@ To clone and run this project, you'll need:
 - [Python](https://www.python.org/downloads/)
 - [Poetry](https://python-poetry.org/docs/#installation)
 
+
+<details>
+<summary>Step-by-step commands</summary>
+
 1. Firstly clone repo
    ```bash
    git clone https://github.com/Kazzila/flask_blog
@@ -95,6 +99,8 @@ To clone and run this project, you'll need:
    ```
 
 10. Open url [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+
+</details>
 
 
 <br>
