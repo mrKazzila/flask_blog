@@ -44,3 +44,9 @@ def delete(post_id):
     post_title = post['title']
     delete_post(post_title=post_title, post_id=post_id)
     return redirect(url_for('index'))
+
+
+@app.route('/about')
+def about():
+    """About page"""
+    return render_template('about.html')
