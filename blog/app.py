@@ -1,10 +1,11 @@
 from flask import Flask, redirect, render_template, request, url_for
 
-from services.blog_services import (create_new_post, delete_post, edit_post,
+from blog.config import BlogConfig
+from blog.services.blog_services import (create_new_post, delete_post, edit_post,
                                     get_all_posts, get_post)
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'you secret key'
+app.config.from_object(BlogConfig)
 
 
 @app.route('/')
