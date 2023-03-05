@@ -1,8 +1,7 @@
 import argparse
 
-from db_settings import init_db as init_database
 from blog.app import app
-
+from db_settings import init_db as init_database
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

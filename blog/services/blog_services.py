@@ -5,7 +5,8 @@ from werkzeug import Request
 from werkzeug.datastructures import ImmutableMultiDict
 from werkzeug.exceptions import abort
 
-from blog.services.databese_services import (_add_post_to_db, _delete_post_from_db,
+from blog.services.databese_services import (_add_post_to_db,
+                                             _delete_post_from_db,
                                              _get_all_posts, _get_post,
                                              _update_post_in_db)
 
