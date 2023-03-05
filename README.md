@@ -85,17 +85,17 @@ To clone and run this project, you'll need:
 
 7. Add the FLASK_DEBUG environment variable for development mode:
     ```bash
-   export FLASK_DEBUG=development
+   export FLASK_DEBUG=true
    ```
 
 8. Init database:
     ```bash
-   python init_db.py
+   python main.py -idb
    ```
 
 9. Run the Flask application:
     ```bash
-   flask run
+   python main.py
    ```
 
 10. Open url [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
