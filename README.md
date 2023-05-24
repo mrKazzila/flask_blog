@@ -56,7 +56,7 @@ To clone and run this project, you'll need:
 
 1. Firstly clone repo
    ```bash
-   git clone https://github.com/mrKazzila/flask_blog
+   git clone git@github.com:mrKazzila/mini_blog.git
    ```
 
 2. Move to working dir
